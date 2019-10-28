@@ -1,0 +1,37 @@
+<header class="main-header">
+ <!-- Logo -->
+ <a href="/index.html" class="logo">
+   <!-- mini logo for sidebar mini 50x50 pixels -->
+   <span class="logo-mini"><b>${(systemSubName)!'KGA'}</b></span>
+   <!-- logo for regular state and mobile devices -->
+   <span class="logo-lg">YONYOU</b></span>
+ </a>
+
+ <!-- Header Navbar -->
+ <nav class="navbar navbar-static-top" role="navigation">
+   <!-- Sidebar toggle button-->
+   <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button"></a>
+   <!-- Navbar Right Menu -->
+   <div class="navbar-custom-menu">
+     <ul class="nav navbar-nav">
+       <!-- Notifications Menu -->
+
+       <!-- User Account Menu -->
+       <li class="dropdown user user-menu">
+         <!-- Menu Toggle Button -->
+         <a href="/system/me/page.html" class="dropdown-toggle" data-toggle="tooltip" title="Admnin" data-placement="bottom">
+           <!--<img src="${(me.userImg)!}" class="user-image" alt="User">-->
+           <span class="hidden-xs">${(me.userName)!'游客'}</span>
+         </a>
+       </li>
+       <li>
+         <a href="/login/logout.html" class="dropdown-toggle" data-toggle="tooltip" title="退出" data-placement="bottom">
+           <i class="fa fa-sign-out"></i>
+         </a>
+       </li>
+       <li style="width: 30px;">
+       </li>
+      </ul>
+    </div>
+  </nav>
+</header>

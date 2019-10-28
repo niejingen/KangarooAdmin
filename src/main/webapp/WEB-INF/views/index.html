@@ -1,0 +1,87 @@
+<#include "/common/layout.html">
+<@header>
+</@header>
+<@body>
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            主面板
+            <small>显示本用户所有报表</small>
+        </h1>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+        <div class="row">
+            <#list treeMenus as vo>
+                <#if vo_index = 0>
+                    <#list vo.treeIndexAllowAccess as ch>
+
+            <#if ch_index%4 = 0>
+                        <div class="col-lg-3 col-xs-6">
+                            <!-- small box -->
+                            <div class="small-box  bg-yellow">
+                                <div class="inner">
+                                    <h3>${(ch.sysIndexauth.authName)!}</h3>
+                                </div>
+                                <div class="icon">
+                                    <i class="fa fa-jpy"></i>
+                                </div>
+                                <a href=${(ch.sysIndexauth.url)!} class="small-box-footer">详细信息 <i class="fa fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div><!-- ./col -->
+            <#elseif ch_index%4 = 1>
+                <div class="col-lg-3 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box bg-aqua">
+                        <div class="inner">
+                            <h3>${(ch.sysIndexauth.authName)!}</h3>
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-cart-plus"></i>
+                        </div>
+                        <a href=${(ch.sysIndexauth.url)!} class="small-box-footer">详细信息 <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div><!-- ./col -->
+            <#elseif ch_index%4 = 2>
+                <div class="col-lg-3 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box  bg-red">
+                        <div class="inner">
+                            <h3>${(ch.sysIndexauth.authName)!}</h3>
+                        </div>
+                        <div class="icon">
+                            <i class="fa  fa-btc"></i>
+                        </div>
+                        <a href=${(ch.sysIndexauth.url)!} class="small-box-footer">详细信息 <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div><!-- ./col -->
+            <#else>
+                <div class="col-lg-3 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box bg-green">
+                        <div class="inner">
+                            <h3>${(ch.sysIndexauth.authName)!}</h3>
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-car"></i>
+                        </div>
+                        <a href=${(ch.sysIndexauth.url)!} class="small-box-footer">详细信息 <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div><!-- ./col -->
+            </#if>
+                    </#list>
+                </#if>
+            </#list>
+
+        </div><!-- /.row -->
+
+
+
+    </section><!-- /.content -->
+</div><!-- /.content-wrapper -->
+</@body>
+<@footer>
+</@footer>

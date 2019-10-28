@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vacomall.mapper.SysRoleIndexauthMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.vacomall.entity.SysRoleIndexauth">
+		<id column="id" property="id" />
+		<result column="roleId" property="roleId" />
+		<result column="indexAuth" property="indexAuth" />
+	</resultMap>
+
+	<select id="selectRoleIndexauthByUserId" parameterType="java.lang.String" resultType="com.vacomall.entity.SysRoleIndexauth">
+		SELECT DISTINCT rm.* FROM `sys_user_role` ur
+		INNER JOIN `sys_role` r ON r.`id` = ur.`roleId`
+		INNER JOIN  `sys_role_indexauth` rm ON rm.`roleId` = ur.`roleId`
+		WHERE ur.`userId` = #{uid}
+		AND r.`roleState` = 1
+	</select>
+
+</mapper>
