@@ -1,0 +1,4 @@
+SpringMVC+Mybatis+MySQL为核心开发的精简后台基础系统
+主要针对用户，角色权限管理，角色自定义主页页面元素显示等功能
+使用AdminLTE作为前端UI框架
+FreeMarker模板,页面拆分,封装公共部分
